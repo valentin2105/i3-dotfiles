@@ -156,7 +156,7 @@ bindsym $mod+d exec --no-startup-id "rofi -show drun -no-default-config -config 
 bindsym $mod+s exec --no-startup-id "rofi -show drun -no-default-config -config ~/.config/rofi/full_screen.rasi"
 bindsym $mod+z exec "rofi -show  -modi ':rofi-bookmarks' -no-default-config -config ~/.config/rofi/main.rasi"
 bindsym $mod+x exec --no-startup-id "rofi-powermenu"
-#bindsym $mod+c exec "rofi-screenshot"
+bindsym $mod+c exec "rofi-screenshot"
 
 # take a screenshot
 bindsym Pause exec screenshot -sa
