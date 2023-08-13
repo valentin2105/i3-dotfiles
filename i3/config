@@ -104,23 +104,6 @@ bindsym $mod+space focus mode_toggle
 # run lockscreen
 bindsym $mod+9 exec --no-startup-id lock
 
-# Set shut down, restart and locking features
-bindsym $mod+0 mode "$mode_system"
-set $mode_system (l)ock, (e)xit, switch_(u)ser, (s)uspend, (h)ibernate, (r)eboot, (Shift+s)hutdown
-mode "$mode_system" {
-    bindsym l exec --no-startup-id i3exit lock, mode "default"
-    bindsym s exec --no-startup-id i3exit suspend, mode "default"
-    bindsym u exec --no-startup-id i3exit switch_user, mode "default"
-    bindsym e exec --no-startup-id i3exit logout, mode "default"
-    bindsym h exec --no-startup-id i3exit hibernate, mode "default"
-    bindsym r exec --no-startup-id i3exit reboot, mode "default"
-    bindsym Shift+s exec --no-startup-id i3exit shutdown, mode "default"
-
-    # exit system mode: "Enter" or "Escape"
-    bindsym Return mode "default"
-    bindsym Escape mode "default"
-}
-
 # Wireguard VPN
 bindsym $mod+o mode "$vpn_system"
 set $vpn_system Wireguard NTL (a)ctivate, (d)eactivate
@@ -133,23 +116,6 @@ mode "$vpn_system" {
     bindsym Escape mode "default"
 }
 
-# monitor settings
-#bindsym $mod+n exec xrandr --auto --output eDP-1 --mode 1920x1080 --right-of HDMI-1 && i3-msg restart &
-#bindsym $mod+m exec xrandr --auto --output HDMI-1 --off && i3-msg restart &
-
-# toggle polybar
-#bindsym $mod+o exec $HOME/.config/polybar/launch.sh
-#bindsym $mod+p exec killall -q polybar
-
-# move workspaces between monitors
-#bindsym $mod+b move workspace to output right
-
-# focus the parent container
-#bindsym $mod+a focus parent
-
-# focus the child container
-#bindsym $mod+d focus child
-
 # run rofi programs
 bindsym $mod+a exec --no-startup-id "rofi -show window -no-default-config -config ~/.config/rofi/main.rasi"
 bindsym $mod+d exec --no-startup-id "rofi -show drun -no-default-config -config ~/.config/rofi/main.rasi"
@@ -158,40 +124,12 @@ bindsym $mod+z exec "rofi -show  -modi ':rofi-bookmarks' -no-default-confi
 bindsym $mod+x exec --no-startup-id "rofi-powermenu"
 bindsym $mod+c exec "rofi-screenshot"
 
-# take a screenshot
-bindsym Pause exec screenshot -sa
-bindsym Print exec screenshot -sf
-
-# brightness control
-#exec_always --no-startup-id light -I
-#bindsym XF86MonBrightnessUp exec light -A 2 && light -O && brightness &
-#bindsym XF86MonBrightnessDown exec light -U 2 && light -O && brightness &
-
-# brightness control hdmi
-#bindsym Ctrl+F7 exec brightness_hdmi down
-#bindsym Ctrl+F8 exec brightness_hdmi up
-
 # audio control
 bindsym XF86AudioRaiseVolume exec --no-startup-id amixer -D pulse sset Master 5%+ && volume &
 bindsym XF86AudioLowerVolume exec --no-startup-id amixer -D pulse sset Master 5%- && volume &
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && mute &
 #bindsym XF86AudioMicMute exec --no-startup-id amixer -D pulse sset Master 5%+ && volume &
 
-# turn off screen
-#bindsym XF86ScreenSaver exec xset dpms force off
-
-# :)
-#bindsym ctrl + F1 exec --no-startup-id alacritty
-#bindsym ctrl + F5 exec --no-startup-id kitty
-#bindsym ctrl + F2 exec --no-startup-id dmenu_run
-
-# toggle microphone 
-#bindsym ctrl + F3 exec amixer set Capture nocap && dunstify -a "Microphone" "Microphone" "Microphone is muted" -r 100 -i /usr/local/bin/icons/mic-off.svg
-#bindsym ctrl + F4 exec amixer set Capture cap && dunstify -a "Microphone" "Microphone" "Microphone is unmuted" -r 100 -i /usr/local/bin/icons/mic.svg
-
-# toggle touchpad
-#bindsym ctrl + F9 exec xinput set-prop $(xinput list | grep -oP 'Touchpad.*id=\K\d+') "Device Enabled" 0 && dunstify -a "Touchpad" "Touchpad" "Touchpad is disabled" -r 100
-#bindsym ctrl + F10 exec xinput set-prop $(xinput list | grep -oP 'Touchpad.*id=\K\d+') "Device Enabled" 1 && dunstify -a "Touchpad" "Touchpad" "Touchpad is enabled" -r 100
 
 # workspaces names
 set $ws1 "1"
@@ -331,3 +269,70 @@ mode "$mode_gaps_outer" {
         bindsym Return mode "default"
         bindsym Escape mode "default"
 }
+# turn off screen
+#bindsym XF86ScreenSaver exec xset dpms force off
+
+# :)
+#bindsym ctrl + F1 exec --no-startup-id alacritty
+#bindsym ctrl + F5 exec --no-startup-id kitty
+#bindsym ctrl + F2 exec --no-startup-id dmenu_run
+
+# toggle microphone 
+#bindsym ctrl + F3 exec amixer set Capture nocap && dunstify -a "Microphone" "Microphone" "Microphone is muted" -r 100 -i /usr/local/bin/icons/mic-off.svg
+#bindsym ctrl + F4 exec amixer set Capture cap && dunstify -a "Microphone" "Microphone" "Microphone is unmuted" -r 100 -i /usr/local/bin/icons/mic.svg
+
+# toggle touchpad
+#bindsym ctrl + F9 exec xinput set-prop $(xinput list | grep -oP 'Touchpad.*id=\K\d+') "Device Enabled" 0 && dunstify -a "Touchpad" "Touchpad" "Touchpad is disabled" -r 100
+#bindsym ctrl + F10 exec xinput set-prop $(xinput list | grep -oP 'Touchpad.*id=\K\d+') "Device Enabled" 1 && dunstify -a "Touchpad" "Touchpad" "Touchpad is enabled" -r 100
+
+
+# monitor settings
+#bindsym $mod+n exec xrandr --auto --output eDP-1 --mode 1920x1080 --right-of HDMI-1 && i3-msg restart &
+#bindsym $mod+m exec xrandr --auto --output HDMI-1 --off && i3-msg restart &
+
+# toggle polybar
+#bindsym $mod+o exec $HOME/.config/polybar/launch.sh
+#bindsym $mod+p exec killall -q polybar
+
+# move workspaces between monitors
+#bindsym $mod+b move workspace to output right
+
+# focus the parent container
+#bindsym $mod+a focus parent
+
+# focus the child container
+#bindsym $mod+d focus child
+
+# Set shut down, restart and locking features
+#bindsym $mod+0 mode "$mode_system"
+#set $mode_system (l)ock, (e)xit, switch_(u)ser, (s)uspend, (h)ibernate, (r)eboot, (Shift+s)hutdown
+#mode "$mode_system" {
+#    bindsym l exec --no-startup-id i3exit lock, mode "default"
+#    bindsym s exec --no-startup-id i3exit suspend, mode "default"
+#    bindsym u exec --no-startup-id i3exit switch_user, mode "default"
+#    bindsym e exec --no-startup-id i3exit logout, mode "default"
+#    bindsym h exec --no-startup-id i3exit hibernate, mode "default"
+#    bindsym r exec --no-startup-id i3exit reboot, mode "default"
+#    bindsym Shift+s exec --no-startup-id i3exit shutdown, mode "default"
+#
+#    # exit system mode: "Enter" or "Escape"
+#    bindsym Return mode "default"
+#    bindsym Escape mode "default"
+#}
+
+# take a screenshot
+#bindsym Pause exec screenshot -sa
+#bindsym Print exec screenshot -sf
+
+# brightness control
+#exec_always --no-startup-id light -I
+#bindsym XF86MonBrightnessUp exec light -A 2 && light -O && brightness &
+#bindsym XF86MonBrightnessDown exec light -U 2 && light -O && brightness &
+
+# brightness control hdmi
+#bindsym Ctrl+F7 exec brightness_hdmi down
+#bindsym Ctrl+F8 exec brightness_hdmi up
+
+
+
+
