@@ -18,7 +18,8 @@ exec_always --no-startup-id /usr/bin/picom -b
 exec_always --no-startup-id /usr/bin/dunst &
 
 # set wallpaper with fed
-exec_always --no-startup-id /usr/bin/feh --no-fehbg --bg-scale $HOME/Images/wallpapers/background.png
+#exec_always --no-startup-id /usr/bin/feh --no-fehbg --bg-scale $HOME/Images/wallpapers/background.png
+exec_always --no-startup-id /usr/bin/nitrogen --restore
 
 # launch polybar
 #exec_always --no-startup-id killall -q
