@@ -25,7 +25,7 @@ exec_always --no-startup-id /usr/bin/feh --no-fehbg --bg-scale $HOME/Images/wall
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 # run battery low warning
-#exec_always --no-startup-id battery&
+exec_always --no-startup-id battery&
 
 # start i3 components
 #exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
