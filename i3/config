@@ -14,16 +14,15 @@ exec_always --no-startup-id /usr/bin/picom -b
 # run mpd
 #exec_always --no-startup-id mpd &
 
+# launch polybar
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+
 # run dunst
 exec_always --no-startup-id /usr/bin/dunst &
 
 # set wallpaper with nitrogen
 exec_always --no-startup-id /usr/bin/nitrogen --restore
 #exec_always --no-startup-id /usr/bin/feh --no-fehbg --bg-scale $HOME/Images/wallpapers/background.png
-
-# launch polybar
-#exec_always --no-startup-id killall -q
-exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 # run battery low warning
 exec_always --no-startup-id battery&

@@ -2,12 +2,14 @@ window:
   padding:
    x: 10
    y: 3
-  opacity: 0.88
+  opacity: 0.90
 
 font:
   size: 15
   normal:
     family: ProFont For Powerline
+    #family: Anonymous Pro For Powerline
+    #style: bold
 
 colors:
 

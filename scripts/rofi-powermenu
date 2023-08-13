@@ -32,7 +32,7 @@ main() {
     lock
     ;;
   ' Suspend')
-    systemctl suspend
+    lock & systemctl suspend
     ;;
   ' Log out')
     i3-msg exit
