@@ -18,9 +18,13 @@ plugins=(
 
 )
 alias push="git push"
+alias du="du -skh "
 
 source $ZSH/oh-my-zsh.sh
 
+# Shell remplacement
+alias ls="exa --git --header"
+alias cat="bat"
 
 alias journal="sudo journalctl -fa"
 alias docker="sudo docker"
@@ -86,7 +90,7 @@ export PATH="$PATH:$HOME/.rvm/bin"
 # Rust
 source "$HOME/.cargo/env"
 
-#source /home/valentin/.config/broot/launcher/bash/br
+source /home/valentin/.config/broot/launcher/bash/br
 
 #eval "$(atuin init zsh --disable-up-arrow)"
 
@@ -94,6 +98,7 @@ autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /usr/bin/mcli mcli
 
 neofetch --ascii_distro Arch --color_blocks off
+
 
 ############### END CUSTOM
 # --------------------------------------------------------------------------------------
@@ -188,3 +193,5 @@ neofetch --ascii_distro Arch --color_blocks off
 
 # The next line enables shell command completion for gcloud.
 #if [ -f '/home/valentin/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/valentin/google-cloud-sdk/completion.zsh.inc'; fi
+
+
