@@ -36,7 +36,7 @@ exec_always --no-startup-id /usr/bin/pamac-tray
 exec_always --no-startup-id /usr/bin/clipit
 exec_always --no-startup-id /usr/bin/run_keybase -a
 exec_always --no-startup-id /usr/bin/blueman-applet
-exec_always --no-startup-id /usr/bin/xautolock -time 60 -locker lock
+exec_always --no-startup-id /usr/bin/xautolock -time 60 -locker /usr/bin/i3lock-fancy
 
 ### Shortcuts ###
 floating_modifier $mod
@@ -101,7 +101,7 @@ bindsym $mod+Shift+space floating toggle
 bindsym $mod+space focus mode_toggle
 
 # run lockscreen
-bindsym $mod+9 exec --no-startup-id lock
+bindsym $mod+9 exec --no-startup-id /usr/bin/i3lock-fancy
 
 # Wireguard VPN
 bindsym $mod+o mode "$vpn_system"
