@@ -4,6 +4,8 @@
     "window.menuBarVisibility": "toggle",
     "terminal.integrated.tabs.enabled": true,
     "oneDarkPro.markdownStyle": false,
+    "window.titleBarStyle": "custom",
+    "window.customMenuBarAltFocus": false,
     "workbench.colorCustomizations": {
             "[One Dark Pro Darker]": {
                 "terminal.background": "#1b1b25",
