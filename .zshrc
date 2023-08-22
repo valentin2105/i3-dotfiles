@@ -97,7 +97,10 @@ source /home/valentin/.config/broot/launcher/bash/br
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /usr/bin/mcli mcli
 
+eval $(thefuck --alias)
+
 neofetch --ascii_distro Arch --color_blocks off
+
 
 
 ############### END CUSTOM
