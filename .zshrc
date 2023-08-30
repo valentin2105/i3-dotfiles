@@ -25,6 +25,7 @@ source $ZSH/oh-my-zsh.sh
 # Shell remplacement
 alias ls="exa --git --header"
 alias cat="bat"
+alias catt="bat -p"
 
 alias journal="sudo journalctl -fa"
 alias docker="sudo docker"
@@ -33,6 +34,7 @@ alias docker-compose="sudo docker-compose"
 
 source <(kubectl completion zsh)
 alias k=kubectl
+alias kk="kubectl get pod -A |grep -v Runn |grep -v Term"
 alias kns="kubectl ns"
 alias kctx="kubectl ctx"
 complete -F __start_kubectl k

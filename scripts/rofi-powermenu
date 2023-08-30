@@ -4,11 +4,11 @@
 theme="$HOME/.config/rofi/main_without_icons.rasi"
 
 get_options() {
+  echo " Lock"
+  echo " Suspend"
   echo " Poweroff"
   echo " Reboot"
   echo " Hibernate"
-  echo " Lock"
-  echo " Suspend"
   echo " Log out"
 }
 
@@ -19,6 +19,12 @@ main() {
 
   # run the selected command
   case $choice in
+  ' Lock')
+    sleep 0.3 && i3lock-fancy
+    ;;
+  ' Suspend')
+    systemctl suspend
+    ;;
   ' Poweroff')
     systemctl poweroff
     ;;
@@ -27,12 +33,6 @@ main() {
     ;;
   ' Hibernate')
     systemctl hibernate
-    ;;
-  ' Lock')
-    lock
-    ;;
-  ' Suspend')
-    lock & systemctl suspend
     ;;
   ' Log out')
     i3-msg exit
