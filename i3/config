@@ -101,7 +101,7 @@ bindsym $mod+Shift+space floating toggle
 bindsym $mod+space focus mode_toggle
 
 # run lockscreen
-bindsym $mod+9 exec --no-startup-id /usr/bin/i3lock-fancy
+#bindsym $mod+9 exec --no-startup-id /usr/bin/i3lock-fancy
 
 # Wireguard VPN
 bindsym $mod+o mode "$vpn_system"

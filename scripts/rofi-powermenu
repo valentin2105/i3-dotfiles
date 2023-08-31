@@ -23,7 +23,7 @@ main() {
     sleep 0.3 && i3lock-fancy
     ;;
   ' Suspend')
-    systemctl suspend
+    i3lock-fancy -p -t "Computer Locked" -n & sleep 3 && systemctl suspend
     ;;
   ' Poweroff')
     systemctl poweroff
