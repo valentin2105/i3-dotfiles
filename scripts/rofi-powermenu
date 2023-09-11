@@ -20,10 +20,10 @@ main() {
   # run the selected command
   case $choice in
   ' Lock')
-    sleep 0.3 && i3lock-fancy
+    betterlockscreen -l
     ;;
   ' Suspend')
-    i3lock-fancy -p -t "Computer Locked" -n & sleep 3 && systemctl suspend
+    /srv/suspend-and-lock.sh
     ;;
   ' Poweroff')
     systemctl poweroff

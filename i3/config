@@ -36,7 +36,7 @@ exec_always --no-startup-id /usr/bin/pamac-tray
 exec_always --no-startup-id /usr/bin/clipit
 exec_always --no-startup-id /usr/bin/run_keybase -a
 exec_always --no-startup-id /usr/bin/blueman-applet
-exec_always --no-startup-id /usr/bin/xautolock -time 60 -locker /usr/bin/i3lock-fancy
+exec_always --no-startup-id /usr/bin/xautolock -time 60 -locker /srv/suspend-and-lock.sh
 
 ### Shortcuts ###
 floating_modifier $mod

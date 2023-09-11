@@ -1,5 +1,5 @@
 #!/bin/bash
 
 
-ip=$(curl -s https://ifconfig.nautile.tech)
+ip=$(curl -s -4 https://ifconfig.nautile.tech)
 echo "$ip" || exit 1
