@@ -20,7 +20,7 @@ main() {
   # run the selected command
   case $choice in
   ' Lock')
-    betterlockscreen -l
+    betterlockscreen -l dim
     ;;
   ' Suspend')
     /srv/suspend-and-lock.sh
