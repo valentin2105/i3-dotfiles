@@ -20,10 +20,10 @@ main() {
   # run the selected command
   case $choice in
   ' Lock')
-    betterlockscreen -l dim
+    sleep 0.2 ; /srv/lock.sh
     ;;
   ' Suspend')
-    /srv/suspend-and-lock.sh
+    systemctl suspend
     ;;
   ' Poweroff')
     systemctl poweroff
